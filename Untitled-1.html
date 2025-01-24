@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+<form name="Contact Form" method="post" action="https://script.google.com/macros/s/AKfycbxIepFQbufuABn3njugL2RC97WX8aR_mE_3axj_Jjvd5b4n4LtTZ9J1xHEm7MK1Vbtf/exec">
+    
+    <input type="text" name="First name"  placeholder="First name" required>
+    <br><br>
+    
+    <input type="number" name="Phone number" placeholder="Phone number" required>
+    <br><br>
+   
+    <input type="email" name="Email" placeholder="Email" required>
+    <br><br>
+   
+    <input type="location" name="Location" placeholder="Location" required>
+    <br><br>
+   
+    <input type="Message" name="Message" placeholder="Message">
+    <br><br>
+    <input id="i0"type="Submit" value="Submit">
+</form>
+    </div>
+    <script>
+		const scriptURL = 'https://script.google.com/macros/s/AKfycbxIepFQbufuABn3njugL2RC97WX8aR_mE_3axj_Jjvd5b4n4LtTZ9J1xHEm7MK1Vbtf/exec'
+
+        const form = document.forms['contact-form']
+
+        form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+       .then(response => alert("Thank you! your form is submitted successfully our team will reward you back." ))
+       .then(() => { window.location.reload(); })
+       .catch(error => console.error('Error!', error.message))
+      })
+	</script>
+
+</body>
+</html>
